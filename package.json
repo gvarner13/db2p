@@ -1,0 +1,29 @@
+{
+  "name": "db2p",
+  "version": "1.0.0",
+  "description": "A simple package for giving distance between two gps points",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gvarner13/db2p.git"
+  },
+  "keywords": [
+    "typescript",
+    "gps"
+  ],
+  "author": "Gary Varner <me@garyvarner.me> (https://garyvarner.me)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gvarner13/db2p/issues"
+  },
+  "homepage": "https://github.com/gvarner13/db2p#readme",
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "devDependencies": {
+    "typescript": "^5.6.3"
+  }
+}
