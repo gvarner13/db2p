@@ -5,7 +5,7 @@ export const calculateDistance = (
   { lat1, lon1 }: { lat1: number; lon1: number },
   { lat2, lon2 }: { lat2: number; lon2: number },
   unit = 'km',
-) => {
+): number => {
   const R = unit === 'km' ? 6371 : 3958.8; // Radius of the Earth in kilometers or miles
   const dLat = toRadians(lat2 - lat1);
   const dLon = toRadians(lon2 - lon1);
