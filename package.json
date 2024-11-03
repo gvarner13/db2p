@@ -4,7 +4,9 @@
   "description": "A simple package for giving distance between two gps points",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc"
+    "build": "tsc",
+    "ci": "npm run build",
+    "format": "prettier --write ."
   },
   "repository": {
     "type": "git",
@@ -25,6 +27,7 @@
   ],
   "type": "module",
   "devDependencies": {
+    "prettier": "^3.3.3",
     "typescript": "^5.6.3"
   }
 }
