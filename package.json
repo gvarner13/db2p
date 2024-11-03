@@ -3,10 +3,13 @@
   "version": "1.0.0",
   "description": "A simple package for giving distance between two gps points",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "vitest run",
     "build": "tsc",
-    "ci": "npm run build",
-    "format": "prettier --write ."
+    "ci": "npm run build && npm run check-format && npm run check-exports && npm run lint && npm run test",
+    "format": "prettier --write .",
+    "check-format": "prettier --check .",
+    "check-exports": "attw --pack . --ignore-rules=cjs-resolves-to-esm",
+    "dev": "vitest"
   },
   "repository": {
     "type": "git",
@@ -27,7 +30,10 @@
   ],
   "type": "module",
   "devDependencies": {
+    "@arethetypeswrong/cli": "^0.16.4",
     "prettier": "^3.3.3",
-    "typescript": "^5.6.3"
-  }
+    "typescript": "^5.6.3",
+    "vitest": "^2.1.4"
+  },
+  "main": "dist/index.js"
 }
