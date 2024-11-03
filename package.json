@@ -1,5 +1,5 @@
 {
-  "name": "db2p",
+  "name": "@ghosty-labz/db2p",
   "version": "1.0.1",
   "description": "A simple package for giving distance between two gps points",
   "scripts": {
