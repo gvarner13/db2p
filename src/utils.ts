@@ -8,6 +8,13 @@ type unit = 'km' | 'miles';
 // Haversine formula to calculate the distance between two points
 const toRadians = (degrees: number) => degrees * (Math.PI / 180);
 
+/**
+ * Function takes in two coordinates and returns the distance between them
+ * @param coordinateA
+ * @param coordinateB
+ * @param unit
+ * @returns
+ */
 export const calculateDistance = (
   coordinateA: coordinates,
   coordinateB: coordinates,
