@@ -1,25 +1,36 @@
+type coordinates = {
+  lat: number;
+  lon: number;
+};
+
+type unit = 'km' | 'miles';
+
 // Haversine formula to calculate the distance between two points
 const toRadians = (degrees: number) => degrees * (Math.PI / 180);
 
 export const calculateDistance = (
-  { lat1, lon1 }: { lat1: number; lon1: number },
-  { lat2, lon2 }: { lat2: number; lon2: number },
-  unit = 'km',
+  coordinateA: coordinates,
+  coordinateB: coordinates,
+  unit: unit = 'km',
 ): number => {
+  const { lat: latA, lon: lonA } = coordinateA;
+  const { lat: latB, lon: lonB } = coordinateB;
   const R = unit === 'km' ? 6371 : 3958.8; // Radius of the Earth in kilometers or miles
-  const dLat = toRadians(lat2 - lat1);
-  const dLon = toRadians(lon2 - lon1);
+  const dLat = toRadians(latB - latA);
+  const dLon = toRadians(lonB - lonA);
 
   const a =
     Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-    Math.cos(toRadians(lat1)) *
-      Math.cos(toRadians(lat2)) *
+    Math.cos(toRadians(latA)) *
+      Math.cos(toRadians(latB)) *
       Math.sin(dLon / 2) *
       Math.sin(dLon / 2);
 
   const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 
-  return R * c; // Distance in the specified unit
+  const rawDistance = R * c; // Distance in the specified unit
+
+  return parseFloat(rawDistance.toFixed(2));
 };
 
 export const testData = {
